@@ -1,0 +1,59 @@
+body {
+
+margin: 0;
+
+font-family: Arial;
+
+background: #0f172a;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+}
+
+.container {
+
+background: white;
+
+padding: 30px;
+
+border-radius: 10px;
+
+width: 300px;
+
+}
+
+input {
+
+width: 100%;
+
+padding: 12px;
+
+margin-top: 15px;
+
+box-sizing: border-box;
+
+}
+
+button {
+
+width: 100%;
+
+padding: 12px;
+
+margin-top: 20px;
+
+background: blue;
+
+color: white;
+
+border: none;
+
+cursor: pointer;
+
+}
