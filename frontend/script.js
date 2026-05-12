@@ -19,13 +19,7 @@ async function payNow() {
   const upiId =
     '7032472492@axl';
 
-  // UPI PAYMENT LINK
-
-  const upiLink =
-
-`upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
-
-  // SAVE DATA IN DATABASE
+  // SAVE DATA
 
   const paymentData = {
 
@@ -48,10 +42,7 @@ async function payNow() {
         method: 'POST',
 
         headers: {
-
-          'Content-Type':
-           'application/json'
-
+          'Content-Type': 'application/json'
         },
 
         body:
@@ -67,8 +58,12 @@ async function payNow() {
 
   }
 
-  // OPEN UPI APP
+  // GOOGLE PAY WEB PAYMENT LINK
 
-  window.open(upiLink, '_self');
+  const paymentUrl =
+
+`https://pay.google.com/gp/p/ui/pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
+
+  window.location.href = paymentUrl;
 
 }
