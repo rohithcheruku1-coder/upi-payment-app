@@ -1,4 +1,6 @@
-async function payNow() {
+let upiLink = '';
+
+async function generateQR() {
 
   const name =
     document.getElementById('name').value;
@@ -14,12 +16,35 @@ async function payNow() {
 
   }
 
-  // MOBILE NUMBER BASED UPI
+  // YOUR REAL UPI ID
 
   const upiId =
     '7032472492@axl';
 
-  // SAVE DATA
+  // CREATE UPI LINK
+
+  upiLink =
+
+`upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
+
+  // GENERATE QR
+
+  const qrUrl =
+
+`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiLink)}`;
+
+  // SHOW QR
+
+  document.getElementById('qrImage').src =
+    qrUrl;
+
+  // SHOW PHONEPE BUTTON
+
+  document.getElementById(
+    'phonepeBtn'
+  ).style.display = 'block';
+
+  // SAVE DATA IN DATABASE
 
   const paymentData = {
 
@@ -42,7 +67,10 @@ async function payNow() {
         method: 'POST',
 
         headers: {
-          'Content-Type': 'application/json'
+
+          'Content-Type':
+           'application/json'
+
         },
 
         body:
@@ -58,13 +86,11 @@ async function payNow() {
 
   }
 
-  // UPI LINK
+}
 
-  const upiLink =
+// OPEN PHONEPE
 
-`upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
-
-  // OPEN PAYMENT APP
+function openPhonePe() {
 
   const link =
     document.createElement('a');

@@ -1,59 +1,77 @@
 body {
 
-margin: 0;
+  margin: 0;
 
-font-family: Arial;
+  font-family: Arial;
 
-background: #0f172a;
+  background: #0f172a;
 
-display: flex;
+  display: flex;
 
-justify-content: center;
+  justify-content: center;
 
-align-items: center;
+  align-items: center;
 
-height: 100vh;
+  height: 100vh;
 
 }
 
 .container {
 
-background: white;
+  background: white;
 
-padding: 30px;
+  padding: 30px;
 
-border-radius: 10px;
+  border-radius: 10px;
 
-width: 300px;
+  width: 320px;
+
+  text-align: center;
 
 }
 
 input {
 
-width: 100%;
+  width: 100%;
 
-padding: 12px;
+  padding: 12px;
 
-margin-top: 15px;
+  margin-top: 15px;
 
-box-sizing: border-box;
+  box-sizing: border-box;
 
 }
 
 button {
 
-width: 100%;
+  width: 100%;
 
-padding: 12px;
+  padding: 12px;
 
-margin-top: 20px;
+  margin-top: 20px;
 
-background: blue;
+  background: blue;
 
-color: white;
+  color: white;
 
-border: none;
+  border: none;
 
-cursor: pointer;
+  cursor: pointer;
+
+  font-size: 16px;
+
+}
+
+#qr-container {
+
+  margin-top: 20px;
+
+}
+
+#qrImage {
+
+  width: 250px;
+
+  height: 250px;
 
 }

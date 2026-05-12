@@ -3,42 +3,61 @@
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0">
 
-<title>UPI Payment</title>
+  <title>UPI Payment</title>
 
-<link rel="stylesheet"
-href="style.css">
+  <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<h2>UPI Payment</h2>
+    <h2>UPI Payment</h2>
 
-<input
-type="text"
-id="name"
-placeholder="Enter Name">
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter Name"
+    >
 
-<input
-type="number"
-id="amount"
-placeholder="Enter Amount">
+    <input
+      type="number"
+      id="amount"
+      placeholder="Enter Amount"
+    >
 
-<button onclick="payNow()">
-Pay Now
-</button>
+    <button onclick="generateQR()">
+      Generate QR
+    </button>
 
-</div>
+    <div id="qr-container">
 
-<script src="script.js"></script>
+      <img id="qrImage">
+
+    </div>
+
+    <button
+      id="phonepeBtn"
+      onclick="openPhonePe()"
+      style="display:none;"
+    >
+
+      Open in PhonePe
+
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
+
 </html>
