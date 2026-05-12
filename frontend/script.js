@@ -39,7 +39,7 @@ async function payNow() {
 
   await fetch(
 
-   'http://localhost:5000/save-payment',
+   'https://upi-payment-app-t4th.onrender.com/save-payment',
 
    {
 
