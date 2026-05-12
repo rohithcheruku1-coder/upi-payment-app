@@ -1,10 +1,10 @@
 async function payNow() {
 
   const name =
-   document.getElementById('name').value;
+    document.getElementById('name').value;
 
   const amount =
-   document.getElementById('amount').value;
+    document.getElementById('amount').value;
 
   if (!name || !amount) {
 
@@ -17,9 +17,9 @@ async function payNow() {
   // YOUR REAL UPI ID
 
   const upiId =
-   '7032472492@axl';
+    '7032472492@axl';
 
-  // UPI LINK
+  // UPI PAYMENT LINK
 
   const upiLink =
 
@@ -37,31 +37,38 @@ async function payNow() {
 
   };
 
-  await fetch(
+  try {
 
-   'https://upi-payment-app-t4th.onrender.com/save-payment',
+    await fetch(
 
-   {
+      'https://upi-payment-app-t4th.onrender.com/save-payment',
 
-    method: 'POST',
+      {
 
-    headers: {
+        method: 'POST',
 
-      'Content-Type':
-       'application/json'
+        headers: {
 
-    },
+          'Content-Type':
+           'application/json'
 
-    body:
-     JSON.stringify(paymentData)
+        },
 
-   }
+        body:
+         JSON.stringify(paymentData)
 
-  );
+      }
+
+    );
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
 
   // OPEN UPI APP
 
-  window.location.href =
-   upiLink;
+  window.open(upiLink, '_self');
 
 }
