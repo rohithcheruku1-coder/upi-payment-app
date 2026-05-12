@@ -92,11 +92,11 @@ async function generateQR() {
 
 function openPhonePe() {
 
-  const link =
-    document.createElement('a');
+  const phonePeUrl =
 
-  link.href = upiLink;
+`phonepe://pay?pa=7032472492@axl&pn=Payment&am=${document.getElementById('amount').value}&cu=INR`;
 
-  link.click();
+  window.location.href =
+    phonePeUrl;
 
 }
