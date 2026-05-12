@@ -14,7 +14,7 @@ async function payNow() {
 
   }
 
-  // YOUR REAL UPI ID
+  // MOBILE NUMBER BASED UPI
 
   const upiId =
     '7032472492@axl';
@@ -58,12 +58,19 @@ async function payNow() {
 
   }
 
-  // GOOGLE PAY WEB PAYMENT LINK
+  // UPI LINK
 
-  const paymentUrl =
+  const upiLink =
 
-`https://pay.google.com/gp/p/ui/pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
+`upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
 
-  window.location.href = paymentUrl;
+  // OPEN PAYMENT APP
+
+  const link =
+    document.createElement('a');
+
+  link.href = upiLink;
+
+  link.click();
 
 }
